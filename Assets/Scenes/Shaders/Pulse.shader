@@ -74,7 +74,7 @@
              
                 float4 col = tex2D(_MainTex, i.uv);
                 float d = Linear01Depth(tex2D(_CameraDepthTexture, i.uv))*_ProjectionParams.z/_Distance;
-                col.rgb = lerp(col.rgb, 0, 1-saturate(d));
+                col.rgb = lerp(col.rgb, -0.3,0.7-saturate(d));
                 col.rgb = lerp(col.rgb, 0, saturate(d));
                 
                return col;
